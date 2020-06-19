@@ -1,0 +1,20 @@
+<form class="uni-search-form">
+  <mat-form-field class="form-field">
+    <mat-label>Nhập ID Trường</mat-label>
+    <input
+      matInput
+      placeholder="Ex. FTU, BKU,..."
+      [(ngModel)]="uniSearch"
+      name="unisearch"
+      style="text-transform: uppercase;"
+    />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    class="form-button"
+    color="primary"
+    (click)="onSearchUni()"
+  >
+    Tìm kiếm
+  </button>
+</form>

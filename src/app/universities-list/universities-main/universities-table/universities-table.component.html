@@ -1,0 +1,53 @@
+<div class="uni-table">
+  <p
+    *ngIf="uniDataList.length === 0; else dataAvailable"
+    style="font-weight: 500; color: #f44336; font-size: 1.2em;"
+  >
+    Không tìm thấy ID trường!
+  </p>
+  <ng-template #dataAvailable>
+    <table mat-table [dataSource]="uniDataList" class="mat-elevation-z8">
+      <!-- ID Column -->
+      <ng-container matColumnDef="uniId">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 1em;">ID Trường</th>
+        <td mat-cell *matCellDef="let uni">{{ uni.id }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="uniName">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 1em;">Tên Trường</th>
+        <td mat-cell *matCellDef="let uni">{{ uni.name }}</td>
+      </ng-container>
+
+      <!-- Info Column -->
+      <ng-container matColumnDef="uniInfo">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 1em;">Thông Tin Trường</th>
+        <td mat-cell *matCellDef="let uni">{{ uni.info }}</td>
+      </ng-container>
+
+      <!-- Info Column -->
+      <ng-container matColumnDef="uniType">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 1em;">Loại Trường</th>
+        <td mat-cell *matCellDef="let uni">
+          {{ uni.type | typeUniTransform }}
+        </td>
+      </ng-container>
+
+      <!-- Edit or Delete Column -->
+      <ng-container matColumnDef="editOrDelete">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 1em;">Sửa/Xóa</th>
+        <td mat-cell *matCellDef="let uni">
+          <button mat-raised-button class="table-button" color="primary">
+            Sửa
+          </button>
+          <button mat-raised-button class="table-button" color="warn" (click)="openDialog(uni.id)">
+            Xóa
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" style="cursor: pointer;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns" class="row-table"></tr>
+    </table>
+  </ng-template>
+</div>

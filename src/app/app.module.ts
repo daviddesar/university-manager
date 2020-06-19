@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeModule } from './home/home.module';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UniversitiesListModule } from './universities-list/universities-list.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatToolbarModule,
     FormsModule,
     HomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    UniversitiesListModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]
