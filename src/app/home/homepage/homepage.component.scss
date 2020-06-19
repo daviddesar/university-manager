@@ -1,0 +1,48 @@
+.input-title {
+  margin: 1.5em auto;
+  padding: 0 10em;
+  h1 {
+    color: #3f51b5;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+  }
+}
+::ng-deep .mat-horizontal-stepper-header {
+  pointer-events: none !important;
+}
+.input-university {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 1em;
+
+  .step-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #3f51b5;
+  }
+  .form {
+    .id-input {
+      text-transform: uppercase;
+    }
+    .basic-info {
+      width: 60%;
+      display: block;
+      margin: 0.3em 0;
+    }
+    .radio-select {
+      margin: 0 1em;
+    }
+    .scores {
+      display: flex;
+      justify-content: space-between;
+      .score-field {
+        width: 30%;
+      }
+    }
+  }
+  .button-next {
+    margin-top: 2.5em;
+  }
+}
