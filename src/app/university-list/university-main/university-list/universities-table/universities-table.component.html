@@ -10,25 +10,25 @@
       <!-- ID Column -->
       <ng-container matColumnDef="uniId">
         <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 1em;">ID Trường</th>
-        <td mat-cell *matCellDef="let uni">{{ uni.id }}</td>
+        <td mat-cell *matCellDef="let uni" (click)="onSelectUni(uni.id)">{{ uni.id }}</td>
       </ng-container>
 
       <!-- Name Column -->
       <ng-container matColumnDef="uniName">
         <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 1em;">Tên Trường</th>
-        <td mat-cell *matCellDef="let uni">{{ uni.name }}</td>
+        <td mat-cell *matCellDef="let uni" (click)="onSelectUni(uni.id)">{{ uni.name }}</td>
       </ng-container>
 
       <!-- Info Column -->
       <ng-container matColumnDef="uniInfo">
         <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 1em;">Thông Tin Trường</th>
-        <td mat-cell *matCellDef="let uni">{{ uni.info }}</td>
+        <td mat-cell *matCellDef="let uni" (click)="onSelectUni(uni.id)">{{ uni.info | shortenInfo }}</td>
       </ng-container>
 
       <!-- Info Column -->
       <ng-container matColumnDef="uniType">
         <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 1em;">Loại Trường</th>
-        <td mat-cell *matCellDef="let uni">
+        <td mat-cell *matCellDef="let uni" (click)="onSelectUni(uni.id)">
           {{ uni.type | typeUniTransform }}
         </td>
       </ng-container>

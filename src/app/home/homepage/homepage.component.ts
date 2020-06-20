@@ -31,7 +31,6 @@ export class HomepageComponent implements OnInit {
 
   constructor(
     private universitiesService: UniversitiesService,
-    private activatedRoute: ActivatedRoute,
     public dialog: MatDialog,
     private snackBar: MatSnackBar,
     private router: Router
@@ -66,7 +65,10 @@ export class HomepageComponent implements OnInit {
       this.scoresButtonDisabled = scoresChanges === 'INVALID' ? true : false;
     });
   }
-
+  onNext() {
+    // tslint:disable-next-line:no-string-literal
+    console.log(this.myForm.get('basicInfo').value['uniEstablishedDate']);
+  }
   onSubmit() {
     const { uniName, uniId, uniInfo, uniType, uniEstablishedDate } = this.myForm.get('basicInfo').value;
     const { groupA, groupB, groupC } = this.myForm.get('scores').value;

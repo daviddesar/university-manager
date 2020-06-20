@@ -10,7 +10,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeModule } from './home/home.module';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UniversitiesListModule } from './universities-list/universities-list.module';
+import { UniversitiesListModule } from './university-list/university-list.module';
+import { StudentModule } from './student/student.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UniversitiesListModule } from './universities-list/universities-list.mo
     FormsModule,
     HomeModule,
     ReactiveFormsModule,
-    UniversitiesListModule
+    UniversitiesListModule,
+    StudentModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]

@@ -1,0 +1,13 @@
+.student-card {
+  &__info {
+    margin: 1.2em 1em;
+    &-title {
+      display: inline-block;
+      margin: 0.2em 0;
+    }
+    .score-list {
+        list-style: none;
+        margin: .2em 0;
+    }
+  }
+}

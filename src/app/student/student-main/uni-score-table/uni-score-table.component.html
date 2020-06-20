@@ -1,0 +1,67 @@
+<mat-table
+  [dataSource]="uniList"
+  class="mat-elevation-z8"
+  style="width: 100%; margin-top: 3em;"
+>
+  <!-- Position Column -->
+  <ng-container matColumnDef="uniId">
+    <mat-header-cell *matHeaderCellDef> Mã Trường </mat-header-cell>
+    <mat-cell *matCellDef="let uni"> {{ uni.id }} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="uniName">
+    <mat-header-cell *matHeaderCellDef> Tên Trường </mat-header-cell>
+    <mat-cell *matCellDef="let uni"> {{ uni.name }} </mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="groupA">
+    <mat-header-cell *matHeaderCellDef> Điểm Khối A </mat-header-cell>
+    <mat-cell *matCellDef="let uni">
+      {{ uni.scores.a }}
+      <span
+        style="margin-left: 1em; font-weight: bold;"
+        [ngStyle]="{
+          'color': student.scores.a >= uni.scores.a ? 'green' : 'red'
+        }"
+      >
+        {{ uni.scores.a | passCheck: student.scores.a }}</span
+      >
+    </mat-cell>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="groupB">
+    <mat-header-cell *matHeaderCellDef> Điểm Khối B </mat-header-cell>
+    <mat-cell *matCellDef="let uni">
+      {{ uni.scores.b }}
+      <span
+        style="margin-left: 1em; font-weight: bold;"
+        [ngStyle]="{
+          'color': student.scores.b >= uni.scores.b ? 'green' : 'red'
+        }"
+      >
+        {{ uni.scores.b | passCheck: student.scores.b }}</span
+      >
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="groupC">
+    <mat-header-cell *matHeaderCellDef> Điểm Khối C </mat-header-cell>
+    <mat-cell *matCellDef="let uni">
+      {{ uni.scores.c }}
+      <span
+        style="margin-left: 1em; font-weight: bold;"
+        [ngStyle]="{
+          'color': student.scores.c >= uni.scores.c ? 'green' : 'red'
+        }"
+      >
+        {{ uni.scores.c | passCheck: student.scores.c }}</span
+      >
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

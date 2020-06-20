@@ -1,0 +1,21 @@
+<mat-card class="student-card">
+  <mat-card-header>
+    <mat-card-title>Thông tin học sinh</mat-card-title>
+    <!-- <mat-card-subtitle>Mã HS: 001234</mat-card-subtitle> -->
+  </mat-card-header>
+  <mat-card-content class="student-card__info">
+      <span class="student-card__info-title">Tên học sinh: {{student.studentName}}</span>
+      <br>
+      <span class="student-card__info-title">Trường: {{student.school}}</span>
+      <br>
+      <span class="student-card__info-title">Mã dự thi: {{student.studentId}}</span>
+      <br>
+      <span class="student-card__info-title">Điểm thi các khối: </span>
+      <ul class="score-list">
+          <li>Khối A: {{student.scores.a}}</li>
+          <li>Khối B: {{student.scores.b}}</li>
+          <li>Khối C: {{student.scores.c}}</li>
+      </ul>
+      <br>
+  </mat-card-content>
+</mat-card>

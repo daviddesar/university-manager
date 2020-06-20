@@ -1,0 +1,41 @@
+.card-container {
+  width: 80%;
+  margin: 3em auto;
+  .uni-card {
+    // margin: 3em 0;
+    padding: 2.5em 2em;
+    &__name {
+      color: #4050b5;
+      font-size: 1.8em;
+      text-transform: uppercase;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.8em !important;
+    }
+    &__id {
+      color: #4050b5e0;
+      font-size: 1.1em;
+    }
+    &__content {
+      margin: 0 1em;
+      &-title {
+        font-size: 1.2em;
+        font-weight: 500;
+      }
+      .score-list {
+        margin-top: 1.5em;
+        &__container {
+          margin-top: 0;
+          list-style: none;
+          &-item {
+              margin: .3em 0;
+          }
+        }
+      }
+    }
+    &__buttons {
+      margin: 1.5em 1em;
+    }
+  }
+  
+}
