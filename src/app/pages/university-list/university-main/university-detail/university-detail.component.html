@@ -1,0 +1,58 @@
+<div class="card-container">
+  <button
+    mat-raised-button
+    style="margin-bottom: 1em;"
+    color="basic"
+    (click)="onGoBack()"
+  >
+    Quay lại
+  </button>
+  <mat-card class="uni-card">
+    <mat-card-header>
+      <mat-card-title class="uni-card__name"
+        >Trường {{ university.name }}</mat-card-title
+      >
+      <mat-card-subtitle>
+        <p class="uni-card__id">Mã Trường: {{ university.id }}</p>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="uni-card__content">
+      <span
+        class="uni-card__content-title"
+        style="padding-bottom: 12px; display: block;"
+        >Loại trường:
+        <span style="font-weight: 400; font-size: 14px; text-transform: lowercase;">trường {{
+          university.type | typeUniTransform
+        }}</span>
+      </span>
+
+      <span
+        class="uni-card__content-title"
+        style="padding-bottom: 12px; display: block;"
+        >Ngày thành lập trường:
+        <span style="font-weight: 400; font-size: 14px"> {{
+          university.establishedDate | dateTransform
+        }}</span>
+      </span>
+
+      <p class="uni-card__content-title">Thông tin trường:</p>
+      <p>
+        {{ university.info }}
+      </p>
+      <div class="score-list">
+        <p class="uni-card__content-title">Điểm chuẩn các khối:</p>
+        <ul class="score-list__container">
+          <li class="score-list__container-item">
+            Khối A: {{ university.scores.a }}
+          </li>
+          <li class="score-list__container-item">Khối B: {{ university.scores.b }}</li>
+          <li class="score-list__container-item">Khối C: {{ university.scores.c }}</li>
+        </ul>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="uni-card__buttons">
+      <button mat-raised-button color="primary" (click)="onGotoEdit()">Sửa</button>
+      <button mat-raised-button color="warn" (click)="onDeleteUni(university.id)">Xóa</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

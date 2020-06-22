@@ -1,0 +1,15 @@
+.input-title {
+  margin: 3em auto;
+  width: 83%;
+  h1 {
+    padding: 0 1em;
+    color: #3f51b5;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+  }
+}
+::ng-deep .mat-horizontal-stepper-header {
+  pointer-events: none !important;
+}

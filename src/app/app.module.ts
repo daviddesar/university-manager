@@ -5,31 +5,42 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { HomeModule } from './home/home.module';
+
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UniversitiesListModule } from './university-list/university-list.module';
-import { StudentModule } from './student/student.module';
+
+import { PopupComponent } from './components/popup/popup.component';
+import { HomeModule } from './pages/home/home.module';
+import { UniversitiesListModule } from './pages/university-list/university-list.module';
+import { StudentModule } from './pages/student/student.module';
+import { SharedMatModule } from './shared/shared-mat.module';
+import { CommonModule } from '@angular/common';
+import { TitleChangePipe } from './title-change.pipe';
+import { ChangeTitlePipe } from './shared/change-title.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    PopupComponent,
+    ChangeTitlePipe
   ],
   imports: [
+    CommonModule,
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    FormsModule,
     HomeModule,
     ReactiveFormsModule,
     UniversitiesListModule,
-    StudentModule
+    StudentModule,
+    SharedMatModule
   ],
-  providers: [MatDatepickerModule],
+  providers: [MatDatepickerModule, ChangeTitlePipe],
+  exports: [ChangeTitlePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

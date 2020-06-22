@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomepageComponent } from './pages/home/homepage/homepage.component';
+import { StudentMainComponent } from './pages/student/student-main/student-main.component';
+import { StepperFormComponent } from './components/stepper-form/stepper-form.component';
 
-import { HomepageComponent } from './home/homepage/homepage.component';
-import { UniversityDetailComponent } from './university-list/university-main/university-detail/university-detail.component';
-import { UniversityMainComponent } from './university-list/university-main/university-main.component';
-import { StudentMainComponent } from './student/student-main/student-main.component';
+
 
 const routes: Routes = [
   {
@@ -14,15 +14,15 @@ const routes: Routes = [
   },
   {
     path: 'add-uni',
-    component: HomepageComponent
+    component: StepperFormComponent,
+    data: {
+      type: 'add'
+    }
   },
   {
     path: 'uni-list',
-    component: UniversityMainComponent,
-  },
-  {
-    path: 'uni-list/:uniId',
-    component: UniversityDetailComponent,
+    // component: UniversityMainComponent,
+    loadChildren: () => import('./pages/university-list/university-list.module').then(m => m.UniversitiesListModule)
   },
   {
     path: 'student',

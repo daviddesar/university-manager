@@ -1,0 +1,48 @@
+$primary-color : #3f51b5;
+
+.form-container {
+  width: 83%;
+  margin: 2em auto;
+  .form-title {
+    margin-left: 1em;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    color: $primary-color;
+    font-weight: bold;
+  }
+  .input-university {
+    width: 100%;
+
+    .step-title {
+      font-weight: bold;
+      font-size: 1.5em;
+      color: $primary-color;
+    }
+    .form {
+      ::ng-deep .mat-horizontal-stepper-header {
+        pointer-events: none !important;
+      }
+      .id-input {
+        text-transform: uppercase;
+      }
+      .basic-info {
+        width: 60%;
+        display: block;
+        margin: 0.3em 0;
+      }
+      .radio-select {
+        margin: 0 1em;
+      }
+      .scores {
+        display: flex;
+        justify-content: space-between;
+        .score-field {
+          width: 30%;
+        }
+      }
+    }
+    .button-next {
+      margin-top: 2.5em;
+    }
+  }
+}
